@@ -2,5 +2,5 @@
   hosts: all
   tasks:
   - name: Task1
-      ansible.builtin.debug:
-         msg: Hello from playbook play
+    ansible.builtin.debug:
+      msg: Hello from playbook play
