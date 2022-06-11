@@ -26,9 +26,10 @@
       ansible.builtin.debug:
         msg: URL -{{URL}}
       vars:
-      URL: tasks.example.com
+        URL: tasks.example.com
     - name: Print URL2
       ansible.builtin.debug:
         msg: URL -{{URL}}
-      vars: second-task.example.com
+      vars:
+        URL: second-task.example.com
 
