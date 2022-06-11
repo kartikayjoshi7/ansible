@@ -33,7 +33,8 @@
       vars:
         URL: second-task.example.com
 ## Key take away: Task level varible , the scope is for that task only
-- name: Play for INV variable files
+
+- name: Play for INV variable
   hosts: all
   tasks:
     - name: Print URL
@@ -41,3 +42,9 @@
         msg: URL - {{URL}}
 
 
+- name: Play for Command line variables
+  hosts: all
+  tasks:
+    - name: Print URL
+      ansible.builtin.debug:
+        msg: URL - {{URL}}
