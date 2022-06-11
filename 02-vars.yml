@@ -2,9 +2,19 @@
   hosts: all
   vars:
     URL: play.example.com
+    a: 1000000000
   tasks:
     - name: Print a value
       ansible.builtin.debug:
         msg: URL - {{URL}}
 
 #Since it is play level variable the scope is complete on all tasks.
+
+- name: Play for variable files
+  hosts: all
+  vars_files:
+    - sample-vars.yml
+  tasks:
+    - name: Print URL
+      ansible.builtin.debug:
+        msg: URL - {{URL}}
