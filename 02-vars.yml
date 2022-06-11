@@ -1,0 +1,10 @@
+- name: Play for variables
+  hosts: all
+  vars:
+    URL: play.example.com
+  tasks:
+    - name: Print a value
+      ansible.builtin.debug:
+        msg: URL - {{URL}}
+
+#Since it is play level variable the scope is complete on all tasks.
