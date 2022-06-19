@@ -1,5 +1,3 @@
-## 11 Components
-
 - name: Frontend setup
   hosts: FRONTEND
   become: yes
