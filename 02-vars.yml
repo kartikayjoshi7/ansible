@@ -56,8 +56,10 @@
 #      ansible.builtin.debug:
 #        msg: Hostname- {{ansible_fqdn}}
 
+
+
 - name: Register Variables
-  host: all
+  hosts: all
   tasks:
     - name: Uptime command
       ansible.builtin.shell: uptime
