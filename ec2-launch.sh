@@ -15,3 +15,5 @@ aws ec2 run-instances --launch-template LaunchTemplateId=$(TEMP_ID), Version=$(T
 
 #Update the DNS Record
 
+
+
