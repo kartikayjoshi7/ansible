@@ -1,58 +1,69 @@
-- name: Play for variables
-  hosts: all
-  vars:
-    URL: play.example.com
-    a: 1000000000
+#- name: Play for variables
+#  hosts: all
+#  vars:
+#    URL: play.example.com
+#    a: 1000000000
+#  tasks:
+#    - name: Print a value
+#      ansible.builtin.debug:
+#        msg: URL - {{URL}}
+#
+##Since it is play level variable the scope is complete on all tasks.
+#
+#- name: Play for variable files
+#  hosts: all
+#  vars_files:
+#    - sample-vars.yml
+#  tasks:
+#    - name: Print URL
+#      ansible.builtin.debug:
+#        msg: URL - {{URL}}
+#
+#- name: Play for tasks level variables
+#  hosts: all
+#  tasks:
+#    - name: Print URL1
+#      ansible.builtin.debug:
+#        msg: URL -{{URL}}
+#      vars:
+#        URL: tasks.example.com
+#    - name: Print URL2
+#      ansible.builtin.debug:
+#        msg: URL -{{URL}}
+#      vars:
+#        URL: second-task.example.com
+### Key take away: Task level varible , the scope is for that task only
+#
+#- name: Play for INV variable
+#  hosts: all
+#  tasks:
+#    - name: Print URL
+#      ansible.builtin.debug:
+#        msg: URL - {{URL}}
+#
+#
+#- name: Play for Command line variables
+#  hosts: all
+#  tasks:
+#    - name: Print URL
+#      ansible.builtin.debug:
+#        msg: URL - {{URL}}
+#
+#- name : Variable from facts
+#  hosts: all
+#  tasks:
+#    - name: Print fact
+#      ansible.builtin.debug:
+#        msg: Hostname- {{ansible_fqdn}}
+
+- name: Register Variables
+  host: all
   tasks:
-    - name: Print a value
+    - name: Uptime command
+      ansible.builtin.shell: uptime
+      register: out
+    - name: Print output
       ansible.builtin.debug:
-        msg: URL - {{URL}}
-
-#Since it is play level variable the scope is complete on all tasks.
-
-- name: Play for variable files
-  hosts: all
-  vars_files:
-    - sample-vars.yml
-  tasks:
-    - name: Print URL
-      ansible.builtin.debug:
-        msg: URL - {{URL}}
-
-- name: Play for tasks level variables
-  hosts: all
-  tasks:
-    - name: Print URL1
-      ansible.builtin.debug:
-        msg: URL -{{URL}}
-      vars:
-        URL: tasks.example.com
-    - name: Print URL2
-      ansible.builtin.debug:
-        msg: URL -{{URL}}
-      vars:
-        URL: second-task.example.com
-## Key take away: Task level varible , the scope is for that task only
-
-- name: Play for INV variable
-  hosts: all
-  tasks:
-    - name: Print URL
-      ansible.builtin.debug:
-        msg: URL - {{URL}}
-
-
-- name: Play for Command line variables
-  hosts: all
-  tasks:
-    - name: Print URL
-      ansible.builtin.debug:
-        msg: URL - {{URL}}
-
-- name : Variable from facts
-  hosts: all
-  tasks:
-    - name: Print fact
-      ansible.builtin.debug:
-        msg: Hostname- {{ansible_fqdn}}
+        msg: "{{out}}"
+        "
 
