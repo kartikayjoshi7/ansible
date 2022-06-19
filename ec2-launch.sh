@@ -5,4 +5,4 @@
 
 
 
-aws ec2 request-spot-instances --instance-count 1 --type "persistent" --launch-specification file://specification.json --tag-specification "ResourceType=instance, Tags=[{Key=Name,Value=frontend}]"
+aws ec2 request-spot-instances --instance-count 1 --type "persistent" --launch-specification file://specification.json --tag-specification "ResourceType=spot-instances-request, Tags=[{Key=Name,Value=frontend}]"
