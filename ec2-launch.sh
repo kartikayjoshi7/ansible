@@ -17,7 +17,8 @@ ZONE_ID=Z03342953N1E33YTO44DC
 
 
 # Check if instance is already there
-
+CREATE_INSTANCE()
+{
 aws ec2 describe-instances --filters "Name=tag:Name,Values=${COMPONENT}" | jq .Reservations[].Instances[].State.Name | sed 's/"//g' | grep -E 'running|stopped' &> /dev/null
 
 if [ $? -eq -0 ]; then
@@ -36,6 +37,16 @@ sed -e "s/IPADDRESS/${IPADDRESS}/" -e "s/COMPONENT/${COMPONENT}/" record.json >/
 
 aws route53 change-resource-record-sets --hosted-zone-id ${ZONE_ID} --change-batch file:///tmp/record.json | jq
 
+}
+
+if [ "$COMPONENT" == "all" ]; then
+  for comp in frontend mongodb catalogue; do
+    COMPONENT=$comp
+    CREATE_INSTANCE
+done
+  else
+    CREATE_INSTANCE
+fi
 
 
 
