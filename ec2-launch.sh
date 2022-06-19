@@ -9,6 +9,7 @@ TEMP_ID="lt-0583d5443e6c153cb"
 TEMP_VER=1
 
 
+
 # Check if instance is already there
 aws run-instances --launch-template LaunchTemplateId=$(TEMP_ID), Version=$(TEMP_VER) --tag-specifications "ResourceType=spot-instances-request,Tags=[{Key=Name,Value=frontend}]" "ResourceType=instance,Tags=[{Key=Name,Value=frontend}]" |jq
 
