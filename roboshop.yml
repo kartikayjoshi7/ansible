@@ -6,7 +6,7 @@
 
 
 - name: MongoDB setup
-  hosts: MONGOB
+  hosts: MONGODB
   become: yes
   roles:
     - mongodb
