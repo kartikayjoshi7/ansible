@@ -26,11 +26,10 @@
     name: nginx
     state: installed
 
-- name: Download and Unzip the Frontend Content
-  ansible.builtin.unarchive:
-    src: https://github.com/roboshop-devops-project/frontend/archive/main.zip
-    dest: /tmp
-    remote_src: yes
+- name: Download MongoDB schema Files
+    ansible.builtin.import_role:
+      name: common
+      tasks_from: download
 
 - name: Remove old HTML Pages
   ansible.builtin.file:
