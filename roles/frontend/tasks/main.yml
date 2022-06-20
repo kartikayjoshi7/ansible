@@ -27,9 +27,9 @@
     state: installed
 
 - name: Download MongoDB schema Files
-    ansible.builtin.import_role:
-      name: common
-      tasks_from: download
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: download
 
 - name: Remove old HTML Pages
   ansible.builtin.file:

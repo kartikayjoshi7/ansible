@@ -48,20 +48,20 @@
     enabled: yes
 
 - name: Download MongoDB schema Files
-    ansible.builtin.import_role:
-      name: common
-      tasks_from: download
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: download
 
 - name: Load Catalogue schema
-    community.mongodb.mongodb_shell:
-      file: " /tmp/mongodb-main/catalogue.js"
-      idempotent: yes
+  community.mongodb.mongodb_shell:
+    file: " /tmp/mongodb-main/catalogue.js"
+    idempotent: yes
 
 
 - name: Load Catalogue schema
-    community.mongodb.mongodb_shell:
-      file: " /tmp/mongodb-main/users.js"
-      idempotent: yes
+  community.mongodb.mongodb_shell:
+    file: " /tmp/mongodb-main/users.js"
+    idempotent: yes
 
 
 
