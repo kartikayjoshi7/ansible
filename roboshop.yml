@@ -44,3 +44,10 @@
   roles:
     - cart
 
+
+- name: Mysql setup
+  hosts: MYSQL
+  become: yes
+  tags: MYSQL
+  roles:
+    - mysql
