@@ -62,7 +62,7 @@
 
 - name: print the password
   debug:
-    msg: "{out}}"
+    msg: "{{out}}"
 
 
 - name: Copy Sql Script for password reset
