@@ -34,9 +34,11 @@
     src: mysql.repo
     dest: /etc/yum.repos.d/mysql.repo
 
-- name: Install MYSQL server
+- name: Install MYSQL server & Ansible MYSql module
   ansible.builtin.yum:
-    name: mysql-community-server
+    name:
+    - mysql-community-server
+    - MySQL-python
     state: installed
 
 - name: Start MYSQL service
@@ -54,3 +56,11 @@
 #    msg: "{{mysql_default_password.stdout}}"
 
 
+- name: Copy Sql Script for password reset
+  ansible.builtin.template:
+    src: root-pass-reset.sql
+    dest: /tmp/root-pass-reset.sql
+
+
+- name: Change the password
+  ansible.builtin.shell: mysql --connect-expired-password -uroot -p"{{mysql_default_password.stdout}}" </tmp/root-pass-reset.sql
