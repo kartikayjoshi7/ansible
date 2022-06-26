@@ -13,6 +13,13 @@
       debug:
         msg: Hello from common
 
-
-
 ## command to run "ansible-playbook 04-tags.yml -t frontend"
+
+- name: demo of tag on play level
+  tags: frontend
+  hosts: localhost
+  tasks:
+    - name: frontend
+      debug:
+        msg: Hello from frontend
+      tags: catalogue
