@@ -8,6 +8,6 @@
         msg: "abc var = ABC"
       when: abc == "ABC"
     - name: Condition with string
-        debug:
-          msg: "abc var = abc"
-        when: abc == "abc"
+      debug:
+        msg: "abc var = abc"
+      when: abc == "abc"
