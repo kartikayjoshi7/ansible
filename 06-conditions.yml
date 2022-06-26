@@ -2,6 +2,7 @@
   hosts: localhost
   vars:
     abc: ABC
+    val: 100
   tasks:
     - name: Condition with string
       debug:
