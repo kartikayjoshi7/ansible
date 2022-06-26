@@ -11,4 +11,4 @@
 
     - name: "print output"
       debug:
-      msg: "{{presence}}"
+        msg: "{{presence}}"
