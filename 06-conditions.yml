@@ -7,14 +7,17 @@
       debug:
         msg: "abc var = ABC"
       when: abc == "ABC"
+
     - name: Condition with string
       debug:
         msg: "abc var = abc"
       when: abc == "abc"
+
     - name: Condition with number
       debug:
         msg: "val var is less then 100"
       when: val < 100
+
     - name: Condition with number
       debug:
         msg: "val var is greater then or equal to 100"
