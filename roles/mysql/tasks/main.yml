@@ -47,12 +47,12 @@
     state: started
     enabled: true
 
-- name: Check if new root password is working or not
-  community.mysql.mysql_query:
-    query: "show databases"
-    login_user: root
-    login_password: "{{MYSQL_ROOT_PASSWORD}}"
-  register: out
+#- name: Check if new root password is working or not
+#  community.mysql.mysql_query:
+#    query: "show databases"
+#    login_user: root
+#    login_password: "{{MYSQL_ROOT_PASSWORD}}"
+#  register: out
 
 
 
@@ -60,9 +60,9 @@
   ansible.builtin.shell: grep 'temporary password' /var/log/mysqld.log  | awk '{print $NF}'
   register: mysql_default_password
 
-- name: print the password
-  debug:
-    msg: "{out}}"
+#- name: print the password
+#  debug:
+#    msg: "{out}}"
 
 
 - name: Copy Sql Script for password reset
