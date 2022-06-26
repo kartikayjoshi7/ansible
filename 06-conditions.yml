@@ -39,4 +39,4 @@
     - name: multi condition
       debug:
         msg: val of abc = ABC and val of val is 50
-      when: abc == "ABC" and Val == 50
+      when: abc == "ABC" and val == 50
