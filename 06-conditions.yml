@@ -3,6 +3,7 @@
   vars:
     abc: ABC
     val: 100
+    apply: true
   tasks:
     - name: Condition with string
       debug:
