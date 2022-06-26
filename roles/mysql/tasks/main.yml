@@ -49,6 +49,8 @@
   ansible.builtin.shell: grep 'temporary password' /var/log/mysqld.log  | awk '{print $NF}'
   register: mysql_default_password
 
-- name: print the password
-  debug:
-    msg: "{{mysql_default_password}}"
+#- name: print the password
+#  debug:
+#    msg: "{{mysql_default_password.stdout}}"
+
+
