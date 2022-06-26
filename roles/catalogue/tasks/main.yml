@@ -14,9 +14,9 @@
 - name: Install NodeJs service
   ansible.builtin.yum:
     name:
-        - nodejs
-        - make
-        - gcc c++
+      - nodejs
+      - make
+      - gcc c++
     state: installed
 
 - name: Add application user
