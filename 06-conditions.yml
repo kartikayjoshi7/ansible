@@ -28,4 +28,4 @@
     - name: Run on boolean
       debug:
         msg: "applying"
-      when: apply
+      when: apply | bool
