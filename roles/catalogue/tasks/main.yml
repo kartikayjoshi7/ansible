@@ -17,6 +17,7 @@
       - nodejs
       - make
       - gcc-c++
+      - npm
     state: installed
 
 - name: Add application user
