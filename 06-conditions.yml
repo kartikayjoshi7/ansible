@@ -27,4 +27,4 @@
     - name: Run on boolean
       debug:
         msg: "applying"
-      when: applu
+      when: apply
