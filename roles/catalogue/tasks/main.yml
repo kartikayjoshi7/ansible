@@ -16,7 +16,7 @@
     name:
       - nodejs
       - make
-      - gcc c++
+      - gcc-c++
     state: installed
 
 - name: Add application user
