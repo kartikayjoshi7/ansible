@@ -49,7 +49,7 @@ aws route53 change-resource-record-sets --hosted-zone-id ${ZONE_ID} --change-bat
 }
 
 if [ "$COMPONENT" == "all" ]; then
-  for comp in frontend$ENV mongodb$ENV catalogue$ENV; do
+  for comp in frontend$ENV mongodb$ENV catalogue$ENV redis$ENV user$ENV cart$ENV mysql$ENV shipping$ENV rabbitmq$ENV payment$ENV dispatch$ENV; do
     COMPONENT=$comp
     CREATE_INSTANCE
 done
