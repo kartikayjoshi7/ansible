@@ -18,7 +18,7 @@
 
 - name: Create app user in Rabbitmq
   community.rabbitmq.rabbitmq_user:
-    users: roboshop
+    user: roboshop
     password: roboshop123
     tags: ["administrator"]
     vhost: /
