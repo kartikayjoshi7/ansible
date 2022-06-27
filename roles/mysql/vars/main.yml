@@ -1,1 +1,2 @@
 MYSQL_ROOT_PASSWORD: Roboshop@1
+COMPONENT: mysql
