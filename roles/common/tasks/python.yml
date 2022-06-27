@@ -47,13 +47,13 @@
 - name: Update UID info in app Configuration
     ansible.builtin.lineinfile:
       path: /home/roboshop/{{COMPONENT}}/{{COMPONENT}}.ini
-      regexp: "^uid"
+      regexp: '^uid'
       line: uid = {{app_user_info.uid}}
 
 - name: Update GID info in app Configuration
     ansible.builtin.lineinfile:
       path: /home/roboshop/{{COMPONENT}}/{{COMPONENT}}.ini
-      regexp: "^gid"
+      regexp: '^gid'
       line: gid = {{app_user_info.group}}
 
 #- name: Setup service and start service
