@@ -99,6 +99,7 @@
 - name: Load schema
   community.mysql.mysql_db:
     state: import
+    name: all
     target: /tmp/mysql.zip/shipping.sql
     login_user: root
     login_password: "{{MYSQL_ROOT_PASSWORD}}"
