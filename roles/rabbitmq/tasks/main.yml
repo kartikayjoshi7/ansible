@@ -17,7 +17,7 @@
     enabled: yes
 
 - name: Create app user in Rabbitmq
-  community.rabbitmq.rabbitmq_users:
+  community.rabbitmq.rabbitmq_user:
     users: roboshop
     password: roboshop123
     tags: ["administrator"]
