@@ -43,15 +43,17 @@
     executable: pip3
 
 
-- name: Install Nodejs Dependencies
-  community.general.npm:
-    path: /home/roboshop/{{COMPONENT}}
-  become_user: roboshop
+- name: Update UID info in app Configuration
+    ansible.builtin.lineinfile:
+      path: /home/roboshop/{{COMPONENT}}/{{COMPONENT}}.ini
+      regexp: "^uid"
+      line: uid = {{app_user_info.uid}}
 
-
-- name: Show App user info
-  debug:
-    msg: "{{app_user_info}}"
+- name: Update GID info in app Configuration
+    ansible.builtin.lineinfile:
+      path: /home/roboshop/{{COMPONENT}}/{{COMPONENT}}.ini
+      regexp: "^gid"
+      line: gid = {{app_user_info.group}}
 
 #- name: Setup service and start service
 #  import_tasks: systemd.yml
