@@ -25,7 +25,7 @@
 
 
 
-- name: Install NodeJs service
+- name: Install Python service
   ansible.builtin.yum:
     name:
       - python36
