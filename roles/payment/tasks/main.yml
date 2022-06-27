@@ -1,0 +1,7 @@
+
+
+
+- name: Import Python for payment
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: python
