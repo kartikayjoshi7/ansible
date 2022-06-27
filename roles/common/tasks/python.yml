@@ -1,31 +1,4 @@
-#  Install Python 3
-#    # yum install python36 gcc python3-devel -y
-#    Create a user for running the application
-#    # useradd roboshop
-#    Download the repo.
-#    $ cd /home/roboshop
-#    $ curl -L -s -o /tmp/payment.zip "https://github.com/roboshop-devops-project/payment/archive/main.zip"
-#    $ unzip /tmp/payment.zip
-#    $ mv payment-main payment
-#    $ cd payment
-#    Install the dependencies
-#  # cd /home/roboshop/payment
-#  # pip3 install -r requirements.txt
-#  Note: Above command may fail with permission denied, So run as root user
-#
-#    Update the roboshop user and group id in payment.ini file.
-#
-#    Setup the service
-#
-#  # mv /home/roboshop/payment/systemd.service /etc/systemd/system/payment.service
-#  # systemctl daemon-reload
-#  # systemctl enable payment
-#  # systemctl start payment
-
-
-
-
-- name: Install Python service
+- name: Install Python3
   ansible.builtin.yum:
     name:
       - python36
@@ -33,34 +6,26 @@
       - python3-devel
     state: installed
 
-- name: Application user setup and download app files
+- name: Application User Setup and Download App Files
   import_tasks: app-user-setup.yml
 
-
-- name: Install python Dependencies
+- name: Install Python Dependencies
   ansible.builtin.pip:
     requirements: /home/roboshop/{{COMPONENT}}/requirements.txt
     executable: pip3
 
-
-- name: Update UID info in app Configuration
+- name: Update UID info App Configuration
   ansible.builtin.lineinfile:
     path: /home/roboshop/{{COMPONENT}}/{{COMPONENT}}.ini
     regexp: '^uid'
     line: uid = {{app_user_info.uid}}
 
+- name: Update GID info App Configuration
+  ansible.builtin.lineinfile:
+    path: /home/roboshop/{{COMPONENT}}/{{COMPONENT}}.ini
+    regexp: '^gid'
+    line: uid = {{app_user_info.group}}
 
-- name: Update GID info in app Configuration
-    ansible.builtin.lineinfile:
-      path: /home/roboshop/{{COMPONENT}}/{{COMPONENT}}.ini
-      regexp: '^gid'
-      line: gid = {{app_user_info.group}}
-
-#- name: Setup service and start service
-#  import_tasks: systemd.yml
-
-
-
-
-
+- name: Setup Service and Start Service
+  import_tasks: systemd.yml
 
