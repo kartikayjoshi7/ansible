@@ -43,6 +43,7 @@
     executable: pip3
 
 
+
 - name: Update UID info in app Configuration
     ansible.builtin.lineinfile:
       path: /home/roboshop/{{COMPONENT}}/{{COMPONENT}}.ini
