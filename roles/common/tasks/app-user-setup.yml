@@ -1,7 +1,7 @@
 - name: Add application user
   ansible.builtin.user:
     name: roboshop
-    register: app_user_info
+  register: app_user_info
 
 
 - name: Download and unzip {{COMPONENT}} Content
