@@ -76,9 +76,9 @@
   roles:
     - payment
 
-- name: Dispatch setup
-  hosts: DISPATCH
-  become: yes
-  tags: DISPATCH
-  roles:
-    - dispatch
+#- name: Dispatch setup
+#  hosts: DISPATCH
+#  become: yes
+#  tags: DISPATCH
+#  roles:
+#    - dispatch
