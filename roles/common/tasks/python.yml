@@ -39,7 +39,7 @@
 
 - name: Install python Dependencies
   ansible.builtin.pip:
-    requirements: /home/roboshop/{{payment}}/requirements.txt
+    requirements: /home/roboshop/{{COMPONENT}}/requirements.txt
     executable: pip3
 
 
