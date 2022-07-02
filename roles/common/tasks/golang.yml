@@ -26,7 +26,7 @@
   import_tasks: app-user-setup.yml
 
 - name: Install app dependencies
-  ansible.builtin.shell: go mod init {{COMPONENT}} && go get go build
+  ansible.builtin.shell: go mod init {{COMPONENT}} && go get && go build
   args:
     chdir: /home/roboshop/{{COMPONENT}}
 
