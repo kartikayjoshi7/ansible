@@ -18,7 +18,7 @@
 
 
 - name: Install Golang
-  ansible.builtin.golang:
+  ansible.builtin.yum:
     name: golang
     state: installed
 
@@ -29,3 +29,6 @@
   ansible.builtin.shell: go mod init {{COMPONENT}} && go get go build
   args:
     chdir: /home/roboshop//{{COMPONENT}}
+
+- name: Setup service and start service
+  import_tasks: systemd.yml
