@@ -1,3 +1,6 @@
+
+## command to run: ansible-playbook 07-loops.yml
+
 - name: Demo on loop
   hosts: localhost
   vars:
