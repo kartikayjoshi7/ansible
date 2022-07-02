@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Ansible Playbook Run') {
             steps {
-                sh 'Hello World'
+                sh ' echo Hello World'
             }
         }
     }
