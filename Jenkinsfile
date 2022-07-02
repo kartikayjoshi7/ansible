@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Ansible Playbook Run') {
             steps {
-                sh 'ansbile-playbook 08-parallel-plays.yml'
+                sh 'Hello World'
             }
         }
     }
