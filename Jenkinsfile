@@ -1,6 +1,7 @@
 pipeline {
     agent { label 'WORKSTATION' }
 
+
     stages {
         stage('Ansible Playbook Run') {
             steps {
