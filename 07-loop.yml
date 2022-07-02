@@ -4,7 +4,7 @@
 - name: Demo on loop
   hosts: localhost
   vars:
-    FRUITS: {"banana", "apple, "orange"}
+    FRUITS: [ "banana", "apple", "orange" ]
   tasks:
     - name: Print Fruit name
       loop: "{{FRUITS}}"
