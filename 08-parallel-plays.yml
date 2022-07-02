@@ -4,6 +4,8 @@
   tasks:
     - name: Sleep for 10 sec
       shell: sleep 10
+    - name: Sleep for another 10 sec
+        shell: sleep 10
 
 
 - name: Play2
