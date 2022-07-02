@@ -1,0 +1,14 @@
+- name: Play1
+  hosts: localhost
+  strategy: free
+  tasks:
+    - name: Sleep for 10 sec
+      shell: sleep 10
+
+
+- name: Play2
+  hosts: localhost
+  strategy: free
+  tasks:
+    - name: Sleep for 10 sec
+      shell: sleep 10
