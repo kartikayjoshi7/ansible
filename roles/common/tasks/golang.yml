@@ -7,10 +7,10 @@
 - name: Application user and setup and download app files
   import_tasks: app-user-setup.yml
 
-- name: Install app dependencies
-  ansible.builtin.shell: go mod init {{COMPONENT}} && go get && go build
-  args:
-    chdir: /home/roboshop/{{COMPONENT}}
+#- name: Install app dependencies
+#  ansible.builtin.shell: go mod init {{COMPONENT}} && go get && go build
+#  args:
+#    chdir: /home/roboshop/{{COMPONENT}}
 
 - name: Setup service and start service
   import_tasks: systemd.yml

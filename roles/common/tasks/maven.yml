@@ -10,11 +10,11 @@
   import_tasks: app-user-setup.yml
 
 
-- name: Compile code
-  ansible.builtin.shell: mvn clean package && mv target/shipping-1.0.jar shipping.jar
-  args:
-    chdir: /home/roboshop/{{COMPONENT}}
-  become_user: roboshop
+#- name: Compile code
+#  ansible.builtin.shell: mvn clean package && mv target/shipping-1.0.jar shipping.jar
+#  args:
+#    chdir: /home/roboshop/{{COMPONENT}}
+#  become_user: roboshop
 
 - name: Setup service and start service
   import_tasks: systemd.yml
