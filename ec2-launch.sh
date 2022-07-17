@@ -17,8 +17,8 @@ if [ ! -z "$ENV" ]; then
 fi
 
 
-TEMP_ID="lt-0583d5443e6c153cb"
-TEMP_VER=7
+TEMP_ID="lt-05de5508ba528b08f"
+TEMP_VER=1
 ZONE_ID=Z03342953N1E33YTO44DC
 
 
