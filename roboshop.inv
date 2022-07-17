@@ -9,7 +9,7 @@ rabbitmq-dev.roboshop.internal
 [MYSQL]
 mysql-dev.roboshop.internal
 [CATALOGUE]
-catalogue-dev.roboshop.internal APP_VERSION=1.0.1
+catalogue-dev.roboshop.internal APP_VERSION=1.0.0
 [USER]
 user-dev.roboshop.internal APP_VERSION=1.0.0
 [CART]
