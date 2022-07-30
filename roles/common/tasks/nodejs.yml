@@ -7,7 +7,6 @@
       - nodejs
       - make
       - gcc-c++
-      - npm
     state: installed
 
 - name: Application user setup and download app files
