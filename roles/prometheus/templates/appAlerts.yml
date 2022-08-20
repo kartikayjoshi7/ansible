@@ -13,6 +13,6 @@ groups:
         annotations:
           summary: "{{component}} Component Service Down - IP - {%raw%}[{{ $labels.instance}}], Name[{{ $labels.instanceName}}]"{%endraw%}
 
-          description: {%raw%}"{{component}} Component Service Down - IP - [{%raw%}{{ $labels.instance}}], Name[{{ $labels.instanceName}}]"{%endraw%}
+          description: {%raw%}"{{component}} Component Service Down - IP - {%raw%}[{{ $labels.instance}}], Name[{{ $labels.instanceName}}]"{%endraw%}
 
 {% endfor %}
