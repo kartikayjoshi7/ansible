@@ -13,6 +13,7 @@ receivers:
         auth_username: {{SMTP_USERNAME}}
         auth_password: {{SMTP_PASSWORD}}
         require_tls: true
+
 #inhibit_rules:
 #  - source_match:
 #      severity: 'critical'
