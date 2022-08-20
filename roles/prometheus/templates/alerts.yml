@@ -1,5 +1,5 @@
 groups:
-  - name: Instance Alerts
+  - name: Instance Down Alerts
     rules:
       - alert: InstanceDown
         expr: up == 0
@@ -13,6 +13,8 @@ groups:
 
           description: {%raw%}"Instance Down - IP - [{{ $labels.instance}}], Name[{{ $labels.instanceName}}]"{%endraw%}
 
+  - name: Instance CPU Alerts
+    rules:
       - alert: CpuUsage Alert
         expr: cpuUsagePercentage > 80
         for: 2m
@@ -25,6 +27,8 @@ groups:
 
           description: {%raw%}"CPU Usage - IP - [{{ $labels.instance}}], Name[{{ $labels.instanceName}}]"{%endraw%}
 
+  - name: Instance Memory Alerts
+    rules:
       - alert: MemoryUsage Alert
         expr: memoryUsagePercentage > 80
         for: 2m
