@@ -10,8 +10,8 @@ receivers:
       - to: kartikayjoshiprivate@gmail.com
         from: kartikayjoshiprivate@gmail.com
         smarthost: email-smtp.us-east-1.amazonaws.com:587
-        auth_username: {{SES_SMTP_USERNAME}}
-        auth_password: {{SES_SMTP_PASSWORD}}
+        auth_username: {{SMTP_USERNAME}}
+        auth_password: {{SMTP_PASSWORD}}
         require_tls: true
 #inhibit_rules:
 #  - source_match:
