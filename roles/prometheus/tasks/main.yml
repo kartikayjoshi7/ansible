@@ -21,7 +21,7 @@
 - name: Update AlertManager Configuration file
   template:
     src: alertmanager.yml
-    dest: /opt/prometheus/alertmanager.yml
+    dest: /opt/alertmanager/alertmanager.yml
 
 - name: Restart Prometheus
   systemd:
