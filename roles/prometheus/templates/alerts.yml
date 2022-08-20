@@ -1,0 +1,33 @@
+groups:
+  - name: Instance Alerts
+    rules:
+      - alert: InstanceDown
+        expr: up == 0
+        for: 1m
+        labels:
+          severity: critical
+          type: instanceAlert
+          kind: instanceDown
+        annotations:
+          summary: "Instance Down - IP - [{{ $labels.instance}}], Name[{{ $labels.instanceName}}]"
+          description: "Instance Down - IP - [{{ $labels.instance}}], Name[{{ $labels.instanceName}}]"
+      - alert: CpuUsage Alert
+        expr: cpuUsagePercentage > 80
+        for: 2m
+        labels:
+          severity: critical
+          type: instanceAlert
+          kind: cpuUsage
+        annotations:
+          summary: "CPU Usage - IP - [{{ $labels.instance}}], Name[{{ $labels.instanceName}}]"
+          description: "CPU Usage - IP - [{{ $labels.instance}}], Name[{{ $labels.instanceName}}]"
+      - alert: MemoryUsage Alert
+        expr: memoryUsagePercentage > 80
+        for: 2m
+        labels:
+          severity: critical
+          type: instanceAlert
+          kind: memoryHighUsage
+        annotations:
+          summary: "Memory High Usage - IP - [{{ $labels.instance}}], Name[{{ $labels.instanceName}}]"
+          description: "Memory High Usage - IP - [{{ $labels.instance}}], Name[{{ $labels.instanceName}}]"
