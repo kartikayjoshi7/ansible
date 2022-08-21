@@ -21,3 +21,4 @@
 
 - name: Filebeat Config
   import_tasks: filebeat.yml
+  when: COMPONENT_TYPE == "APP"
