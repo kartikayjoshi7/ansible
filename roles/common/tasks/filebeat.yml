@@ -1,7 +1,7 @@
 - name: Copy Elastic Repo
   copy:
     src: elastic.repo
-    dest: /etc/yum.repo.d/elastic.repo
+    dest: /etc/yum.repos.d/elastic.repo
 
 - name: Install Filebeat
   yum:
