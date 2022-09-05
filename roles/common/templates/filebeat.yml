@@ -23,6 +23,7 @@ filebeat.inputs:
 output.logstash:
   hosts: ["logstash.roboshop.internal:5044"]
 
+
 ## Defaults
 filebeat.config.modules:
   path: ${path.config}/modules.d/*.yml
