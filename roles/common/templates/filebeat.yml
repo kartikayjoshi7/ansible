@@ -8,7 +8,7 @@ filebeat.inputs:
       env: {{ENV}}
       logType: {{LOG_TYPE}}
       appLang: {{APP_LANG}}
-  { % if LOG_TYPE == "json" % }
+  {% if LOG_TYPE == "json" %}
 json.keys_under_root: true
   {% endif %}
   {% if APP_LANG == "java" %}
@@ -19,9 +19,9 @@ multiline.match: after
   {% if APP_LANG == "python" %}
 include_lines:
   - '^\[2'
-  { % endif % }
+  {% endif %}
 output.logstash:
-  hosts: [ "logstash.roboshop.internal:5044" ]
+  hosts: ["logstash.roboshop.internal:5044"]
 
 ## Defaults
 filebeat.config.modules:
