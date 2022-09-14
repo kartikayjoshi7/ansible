@@ -10,6 +10,12 @@
   - name: Task3
     ansible.builtin.debug:
       msg: 'Hello from playbook play task 3'
+  - name: Task4
+    ansible.builtin.debug:
+      msg: 'Hello from playbook play task 4'
+
+
+
 
 
 
